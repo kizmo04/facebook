@@ -41,7 +41,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # settings_local.json으로 이동
-config['django']['secret_key']
+SECRET_KEY = config['django']['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

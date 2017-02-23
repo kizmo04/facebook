@@ -1,12 +1,18 @@
 reated by https://www.gitignore.io/api/pycharm,python,git,django
 
+*.sqlite
+*.sqlite3
+__dev*/
+media/
+
 # Config folders
 .conf/
 
 ### Django ###
+*.egg-info
 *.log
 *.pot
-*.pyc
+*.py[co]
 __pycache__/
 local_settings.py
 db.sqlite3
