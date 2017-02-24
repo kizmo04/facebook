@@ -1,7 +1,7 @@
 from .models import MyUser
 
 
-class FacebookBackends():
+class FacebookBackend():
     def authenticate(self, facebook_id, **extra_fields):
         user, user_created = MyUser.objects.get_or_create(username=facebook_id)
         return user
