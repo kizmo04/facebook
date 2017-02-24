@@ -1,6 +1,5 @@
-from django.contrib.auth.models import AbstractUser, UserManager
+from django.contrib.auth.models import AbstractUser
 from django.db import models
-from django.utils.crypto import get_random_string
 
 
 # class MyUserManager(UserManager):
@@ -23,6 +22,8 @@ from django.utils.crypto import get_random_string
 
 
 class MyUser(AbstractUser):
+    img_profile = models.ImageField(upload_to='user', blank=True)
+
     # CHOICES_USER_TYPE = (
     #     ('django', 'Django'),
     #     ('facebook', 'Facebook'),
@@ -33,4 +34,7 @@ class MyUser(AbstractUser):
     #     choices=CHOICES_USER_TYPE,
     #     default=CHOICES_USER_TYPE[0][0]
     # )
-    pass
+    def __str__(self):
+        return '{}{}'.format(
+            self.first_name,
+            self.last_name)

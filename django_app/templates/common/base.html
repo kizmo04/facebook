@@ -5,6 +5,12 @@
     <title>Title</title>
 </head>
 <body>
+{% if user.is_authenticated %}
+    <span>{{ user }}님으로 로그인 중입니다.
+    <a href="{% url 'member:logout' %}">로그아웃</a>
+</span>
+    <img src="{{ MEDIA_URL }}{{ user.img_profile }}" alt="" width="200px" height="200px">
+{% endif %}
 {% block content %}
 {% endblock %}
 </body>
