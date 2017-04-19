@@ -10,7 +10,10 @@
     <a href="{% url 'member:logout' %}">로그아웃</a>
 </span>
     <img src="{{ MEDIA_URL }}{{ user.img_profile }}" alt="" width="200px" height="200px">
+{% else %}
+    <a href="{% url 'member:login' %}">로그인 페이지로 가기</a>
 {% endif %}
+
 {% block content %}
 {% endblock %}
 </body>
